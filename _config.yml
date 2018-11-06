@@ -1,0 +1,20 @@
+title: LibreTuner
+description: >-
+  Free and open source engine tuning software.
+url: "libretuner.org"
+author: LibreTuner Team
+exclude:
+  - LICENSE
+  - README.md
+  - TRADEMARK
+twitter_username: LibreTuner
+github_username:  LibreTuner
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /news/:num/

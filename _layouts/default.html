@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+      <![endif]-->
+      <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+      <!--<![endif]-->
+
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+      <style type="text/css">
+      {% capture style %}
+      {% include _css/style.css %}
+      {% endcapture %}
+      {{ style | scssify }}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="">
+          <svg aria-hidden="true" height="1.688em" viewBox="0 0 64 49" width="1.688em">
+            <path d="{% include _icons/libretuner %}" />
+          </svg>
+          LibreTuner
+        </a>
+
+        <ul class="pure-menu-list" id="navigation-links">
+          <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Download</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Manual</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Source</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contribute</a></li>
+        </ul>
+      </div>
+    </div>
+    {{ content }}
+    <footer>
+      &copy; LibreTuner Team
+    </footer>
+  </body>
+  </html>

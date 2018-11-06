@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <meta name="description" content="Free and open source engine tuning software.">
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+      <![endif]-->
+      <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+      <!--<![endif]-->
+
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+      <style type="text/css">
+      
+      * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  line-height: 1.7em;
+  color: #7f8c8d;
+  font-size: 16px;
+  display: table; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #34495e; }
+
+svg {
+  vertical-align: middle; }
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto; }
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+.l-box {
+  padding: 1em; }
+
+.l-box-lrg {
+  padding: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+.is-center {
+  text-align: center; }
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form label {
+  margin: 1em 0 0;
+  font-weight: bold;
+  font-size: 100%; }
+
+.pure-form input[type] {
+  border: 2px solid #ddd;
+  box-shadow: none;
+  font-size: 100%;
+  width: 100%;
+  margin-bottom: 1em; }
+
+/*
+ * -- PURE BUTTON STYLES --
+ * I want my pure-button elements to look a little different
+ */
+.pure-button {
+  background-color: #1f8dd6;
+  color: white;
+  padding: 0.5em 2em;
+  border-radius: 5px; }
+
+a.pure-button-primary {
+  background: white;
+  color: #1f8dd6;
+  border-radius: 5px;
+  font-size: 120%; }
+
+/*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+.home-menu {
+  padding: 0.5em;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: left; }
+
+.home-menu ul {
+  float: right; }
+
+.home-menu .pure-menu-heading {
+  color: #192e5e;
+  font-weight: 400;
+  font-size: 120%;
+  fill: #192e5e; }
+
+.home-menu .pure-menu-heading svg {
+  float: left;
+  margin: 0 0.625em 0 0; }
+
+.home-menu .pure-menu-selected a {
+  color: black; }
+
+.home-menu .pure-menu-selected a:visited {
+  color: black; }
+
+.home-menu a {
+  color: #3e6077; }
+
+.home-menu li a:hover,
+.home-menu li a:focus {
+  background: none;
+  border: none;
+  color: #2b404f; }
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+.splash-container {
+  background: #192e5e;
+  display: table-row;
+  height: 100%; }
+
+.splash {
+  display: table-cell;
+  padding: 5%;
+  vertical-align: middle;
+  text-align: center; }
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+  font-size: 300%;
+  color: white;
+  padding: 1em 1.6em;
+  line-height: 1.3em;
+  font-weight: 400;
+  text-shadow: 0 0.063em 0.063em rgba(0, 0, 0, 0.15);
+  text-transform: uppercase; }
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+  color: white;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  font-weight: 500;
+  text-shadow: 0 0.063em 0.063em rgba(0, 0, 0, 0.15);
+  text-transform: uppercase; }
+
+/*
+ * -- CONTENT STYLES --
+ * This represents the content area (everything below the blue section)
+ */
+.content-wrapper {
+  /* These styles are required for the "scroll-over" effect */
+  /*position: absolute;
+  top: 87%;*/
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
+  background: white; }
+
+/* We want to give the content area some more padding */
+.content {
+  padding: 1em 1em 3em; }
+
+/* This is the class used for the main content headers (<h2>) */
+.content-head {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 2em 0 1em; }
+
+/* This is a modifier class used when the content-head is inside a ribbon */
+.content-head-ribbon {
+  color: white; }
+
+/* This is the class used for the content sub-headers (<h3>) */
+.content-subhead {
+  color: #1f8dd6; }
+
+.content-subhead i {
+  margin-right: 7px; }
+
+/* This is the class used for the dark-background areas. */
+.ribbon {
+  background: #2d3e50;
+  color: #aaa; }
+
+/* This is the class used for the footer */
+.footer {
+  background: #111;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+
+/* Download buttons */
+#desktop-downloads,
+#mobile-downloads {
+  display: inline-block; }
+
+a.downloadbutton {
+  /*background: #F4F7F6;*/
+  color: #192e5e;
+  fill: #192e5e;
+  font-size: 1.125em;
+  /*cursor: pointer;*/
+  width: 8.500em;
+  margin: 0.500em;
+  padding: 0 0.750em 0 0;
+  position: relative;
+  line-height: 3.125em; }
+
+.downloadbutton svg {
+  margin: 0.750em 0 0.750em 0.750em;
+  float: left; }
+
+/* Tablet/Mobile Design */
+@media (max-width: 60em) {
+  .splash {
+    /*width: 100%;*/
+    height: auto; }
+
+  .splash-head {
+    font-size: 20px;
+    padding: 0; }
+
+  #desktop-downloads {
+    /*display: none;*/ }
+
+  #navigation-links {
+    display: none; }
+
+  .home-menu {
+    text-align: center; } }
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="">
+          <svg aria-hidden="true" height="1.688em" viewBox="0 0 64 49" width="1.688em">
+            <path d="M 58.109375,0 C 56.847048,0 55.791016,1.0560326 55.791016,2.3183594 V 3.4785156 H 23.572266 C 10.569465,3.4785156 -1.0999999e-7,14.04798 0,27.050781 c -5.8e-7,13.002801 10.569465,23.572266 23.572266,23.572266 13.002801,0 23.570312,-10.569465 23.570312,-23.572266 0,-3.954844 -0.988095,-7.682015 -2.71289,-10.958984 h 11.361328 v 1.160156 c 0,1.262327 1.056033,2.318359 2.318359,2.318359 h 4.753906 c 1.262325,0 2.31836,-1.056032 2.31836,-2.318359 V 2.3183594 C 65.181641,1.0560326 64.125608,0 62.863281,0 Z m 0.287109,2.6054688 h 4.179688 V 16.964844 h -4.179688 v -1.947266 a 1.302908,1.302908 0 0 0 0,-0.457031 z M 23.572266,6.0859375 h 32.21875 V 13.486328 H 36.193359 a 1.302908,1.302908 0 1 0 0,2.605469 h 5.240235 c 1.962351,3.190244 3.103515,6.933104 3.103515,10.958984 0,11.594509 -9.370334,20.966797 -20.964843,20.966797 -11.594509,0 -20.9667977,-9.372288 -20.9667972,-20.966797 -2e-7,-11.594509 9.3722882,-20.9648434 20.9667972,-20.9648435 z m 0,8.0507815 c -7.118209,1e-6 -12.904297,5.786088 -12.904297,12.904297 1e-6,7.118209 5.786089,12.902343 12.904297,12.902343 7.118209,0 12.902342,-5.784134 12.902343,-12.902343 0,-7.118209 -5.784134,-12.904296 -12.902343,-12.904297 z m 0,1.302734 c 6.414136,0 11.599609,5.187428 11.599609,11.601563 -10e-7,6.414136 -5.185473,11.599609 -11.599609,11.599609 -6.414135,0 -11.601563,-5.185473 -11.601563,-11.599609 0,-6.414135 5.187427,-11.601563 11.601563,-11.601563 z m 0,1.572266 c -5.522543,1e-6 -10.027345,4.506754 -10.027344,10.029297 0,5.522543 4.504801,10.027343 10.027344,10.027343 5.522543,0 10.027343,-4.5048 10.027343,-10.027343 0,-5.522543 -4.504799,-10.029296 -10.027343,-10.029297 z m -0.347657,2.625 c -6.79e-4,0.0026 -0.0013,0.0052 -0.002,0.0078 -0.208172,0.81227 -0.25906,1.823537 -0.279297,2.435547 -0.439454,0.05263 -0.85875,0.164155 -1.257812,0.31836 -0.286434,-0.562405 -0.716187,-1.427491 -0.859375,-1.939454 -0.01336,-0.04777 -0.01579,-0.20289 -0.02734,-0.302734 0.75438,-0.302388 1.5704,-0.480267 2.425781,-0.519531 z m 1.382813,0.0625 c 0.846456,0.117242 1.646412,0.372291 2.375,0.748047 -0.0047,0.0047 -0.01101,0.007 -0.01563,0.01172 -0.580261,0.593071 -1.121948,1.431663 -1.449219,1.957032 -0.398248,-0.1593 -0.820042,-0.27057 -1.259766,-0.328125 0.03283,-0.627034 0.09367,-1.602549 0.226563,-2.121094 0.01195,-0.04661 0.08501,-0.179109 0.123047,-0.267578 z m -5.039063,1.089843 c 0.0018,0.0065 0.0021,0.01303 0.0039,0.01953 0.221182,0.790829 0.667457,1.668978 0.960937,2.220703 -0.36156,0.259524 -0.679881,0.56542 -0.960937,0.90625 -0.539708,-0.352037 -1.3011,-0.863709 -1.667969,-1.222656 -0.03549,-0.03472 -0.11573,-0.16742 -0.175781,-0.248047 0.51422,-0.656829 1.134713,-1.224739 1.839843,-1.675782 z m 8.578125,0.40625 c 0.657426,0.514132 1.224273,1.134548 1.675782,1.839844 -0.0071,0.0019 -0.01436,0.0019 -0.02148,0.0039 -0.773205,0.216253 -1.626172,0.647733 -2.1875,0.945313 -0.276891,-0.344741 -0.594676,-0.651973 -0.953125,-0.916016 0.347312,-0.533695 0.871351,-1.322235 1.238282,-1.697265 0.03478,-0.03555 0.167532,-0.115586 0.248046,-0.175782 z m -4.574218,2.146485 c 2.141584,0 3.841798,1.660799 3.841796,3.699219 0,2.03842 -1.700212,3.697265 -3.841796,3.697265 -2.141583,0 -3.84375,-1.658845 -3.84375,-3.697265 0,-2.03842 1.702166,-3.699219 3.84375,-3.699219 z m -6.59375,0.287109 c 0.005,0.005 0.0086,0.0107 0.01367,0.01563 0.555064,0.543079 1.323118,1.05102 1.871093,1.396485 -0.185258,0.409842 -0.314873,0.848017 -0.380859,1.30664 -0.653195,-0.03712 -1.509419,-0.09948 -1.982422,-0.220703 -0.04702,-0.01205 -0.180031,-0.08645 -0.269531,-0.125 0.117594,-0.845766 0.372332,-1.645055 0.748047,-2.373047 z m 13.478515,0.636719 c 0.302913,0.754983 0.480225,1.571533 0.519531,2.427734 -0.0034,-8.98e-4 -0.0063,-0.003 -0.0098,-0.0039 -0.740854,-0.189861 -1.643741,-0.247025 -2.294922,-0.273437 -0.05949,-0.46053 -0.177847,-0.903771 -0.357422,-1.316407 0.583012,-0.294246 1.363211,-0.67388 1.837891,-0.80664 0.04819,-0.01348 0.203987,-0.01572 0.304687,-0.02734 z m -6.884765,0.507813 c -1.243805,0 -2.267578,1.023773 -2.267578,2.267578 1e-6,1.243805 1.023774,2.265626 2.267578,2.265625 1.243805,1e-6 2.265625,-1.02182 2.265625,-2.265625 0,-1.243805 -1.02182,-2.267578 -2.265625,-2.267578 z m 0,1.302734 c 0.539732,0 0.96289,0.425113 0.96289,0.964844 0,0.539732 -0.423159,0.96289 -0.96289,0.96289 -0.539731,0 -0.964844,-0.423158 -0.964844,-0.96289 -1e-6,-0.539731 0.425113,-0.964844 0.964844,-0.964844 z m -7.404297,1.310547 c 0.0026,6.82e-4 0.0052,0.0013 0.0078,0.002 0.739865,0.189608 1.64285,0.246941 2.294922,0.273437 0.05918,0.460638 0.179954,0.903704 0.359375,1.316407 -0.583012,0.294246 -1.363212,0.673881 -1.83789,0.80664 -0.04808,0.01345 -0.203974,0.01574 -0.304688,0.02734 -0.302211,-0.754331 -0.480484,-1.570355 -0.519531,-2.425781 z m 12.49414,0.345703 c 0.653239,0.03714 1.507674,0.09758 1.980469,0.21875 0.0473,0.01212 0.181278,0.0861 0.271484,0.125 -0.117363,0.847112 -0.371749,1.648048 -0.748046,2.376953 -0.006,-0.006 -0.0096,-0.01361 -0.01563,-0.01953 -0.554311,-0.54234 -1.319493,-1.048793 -1.867188,-1.394532 0.184865,-0.4097 0.313199,-0.848143 0.378906,-1.30664 z m -9.132812,2.363281 c 0.277485,0.345366 0.595703,0.653618 0.955078,0.917969 -0.347914,0.53448 -0.872275,1.319275 -1.238281,1.693359 -0.03503,0.0358 -0.168356,0.117009 -0.25,0.177735 -0.657554,-0.514455 -1.224438,-1.136044 -1.675782,-1.841797 0.0071,-0.0019 0.01436,-0.0019 0.02148,-0.0039 0.772152,-0.215957 1.625047,-0.645567 2.1875,-0.943359 z m 8.042969,0.04883 c 0.540439,0.352163 1.301345,0.861997 1.667968,1.220703 0.0358,0.03503 0.117009,0.168356 0.177735,0.25 -0.514389,0.657336 -1.136159,1.22451 -1.841797,1.675782 -0.0021,-0.0077 -0.0017,-0.01571 -0.0039,-0.02344 -0.221013,-0.79022 -0.667299,-1.665259 -0.960938,-2.216797 0.36148,-0.25945 0.680012,-0.56546 0.960938,-0.90625 z m -5.945313,1.519531 c 0.398945,0.159416 0.821257,0.270692 1.261719,0.328126 -0.03293,0.628452 -0.09585,1.601485 -0.228516,2.11914 -0.01205,0.04702 -0.08645,0.180031 -0.125,0.269531 -0.846467,-0.117423 -1.646469,-0.372208 -2.375,-0.748047 0.0056,-0.0056 0.01201,-0.0099 0.01758,-0.01562 0.579445,-0.592234 1.121453,-1.427661 1.449219,-1.953126 z m 3.832031,0.01758 c 0.287248,0.562973 0.71638,1.426228 0.859375,1.9375 0.01357,0.0485 0.01567,0.205069 0.02734,0.30664 -0.754522,0.302103 -1.572228,0.478547 -2.427734,0.517578 9e-4,-0.0034 0.003,-0.0063 0.0039,-0.0098 0.207901,-0.811251 0.257578,-1.820788 0.277344,-2.433594 0.440102,-0.05251 0.860233,-0.164042 1.259765,-0.318359 z" />
+          </svg>
+          LibreTuner
+        </a>
+
+        <ul class="pure-menu-list" id="navigation-links">
+          <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Download</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Manual</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Source</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contribute</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Free and open source engine tuning software</h1>
+        <p class="splash-subhead">
+            Download
+        </p>
+        <div id="downloads">
+            <div id="desktop-downloads">
+                <a href="#" class="pure-button pure-button-primary downloadbutton">
+                	<svg aria-hidden="true" height="1.688em" viewBox="0 0 24 24" width="1.688em">
+						<path d="M9.84 12.66v9.4L0 20.7v-8.04zm0-10.7v9.5H0V3.3zM24 12.65V24l-13.08-1.8v-9.54zM24 0v11.45H10.92V1.8z" />
+					</svg>
+                	Windows
+            	</a>
+                <a href="#" class="pure-button pure-button-primary downloadbutton">
+                	<svg aria-hidden="true" height="1.688em" viewBox="0 0 24 24" width="1.688em">
+						<path d="M10.6 5.5q-.16.02-.22.14-.06.13-.1.13-.08 0-.08-.07 0-.16.26-.2zm1.16.2q-.06 0-.16-.1t-.23-.06q.32-.14.43.03.04.08-.04.12zm-4.7 5.7q-.06 0-.1.05 0 .05-.05.17-.02.1-.06.18l-.13.17q-.1.13 0 .16.05 0 .16-.1.1-.1.17-.23l.02-.1.03-.08.02-.06v-.08-.03q-.02-.04-.05-.03zm11.45 4.82q0-.24-.73-.57l.1-.36q.05-.18.07-.36l.04-.3q.02-.1 0-.3v-.25q0-.08-.06-.3l-.05-.28q0-.05-.07-.34l-.07-.35q-.14-.64-.63-1.38-.5-.74-.97-1 .33.26.77 1.1 1.16 2.18.72 3.73-.15.53-.67.56-.4.06-.5-.25-.1-.3-.12-1.12 0-.82-.16-1.44-.12-.52-.26-.92-.13-.4-.25-.6l-.2-.34-.18-.2q-.1-.08-.1-.1-.2-.82-.4-1.37-.24-.54-.4-.74-.18-.2-.32-.44-.15-.25-.2-.54-.06-.28.08-.72.13-.43.06-.66-.1-.23-.6-.33-.2-.04-.6-.25-.4-.2-.48-.2-.1-.02-.15-.36-.04-.33.1-.68.16-.35.5-.36.5-.04.67.4.2.44.06.78-.15.25-.03.35.12.1.4 0 .18-.05.18-.47v-.5q-.07-.4-.18-.67-.12-.26-.3-.4-.15-.14-.3-.2t-.36-.1q-1.42.1-1.18 1.8 0 .2-.02.2-.12-.12-.4-.14-.27-.02-.43 0-.17.03-.2-.06 0-.77-.23-1.2-.22-.45-.6-.46-.36-.02-.55.36-.2.4-.24.8 0 .2.05.5.07.3.2.5.1.2.2.18.13-.04.2-.2.06-.1-.1-.1-.08 0-.2-.2-.1-.18-.12-.44 0-.3.12-.5.14-.2.46-.18.22 0 .36.28.13.28.12.52 0 .24-.02.3-.3.2-.4.4-.12.15-.38.3t-.27.17q-.18.2-.2.36-.04.16.1.23.18.1.32.26.14.15.2.25.08.1.26.17t.47.1q.63 0 1.37-.2.03-.03.3-.1l.47-.15q.18-.06.4-.17.2-.1.27-.24.13-.18.27-.1.08.04.1.1.02.1-.04.17-.06.1-.22.13-.27.08-.76.3l-.6.25q-.6.26-.94.32-.34.06-1.06-.03-.14-.04-.12.02 0 .05.22.25.34.3.9.3.23-.02.48-.1.26-.08.5-.2l.43-.22q.2-.13.4-.23l.32-.16q.15-.06.24-.03.1.02.1.15v.06l-.06.06-.08.06-.1.07-.13.06q-.06 0-.15.06l-.12.06q-.38.18-.9.6-.54.4-.9.56-.36.18-.65.02-.28-.15-.85-.98-.3-.42-.33-.3-.02.04-.02.14 0 .33-.2.75-.2.44-.4.76t-.27.77q-.08.46.16.85-.3.08-.84 1.2-.52 1.13-.63 1.9-.04.23-.03.9 0 .7-.07.8-.1.33-.4.04-.42-.4-.47-1.25-.03-.38.05-.75.05-.26 0-.25l-.07.07q-.47.87.15 2.22.06.16.33.38l.32.27q.27.32 1.4 1.22 1.12.9 1.24 1.02.2.2.23.5.02.32-.18.6-.22.26-.62.3.1.2.4.6.27.4.36.72.1.32.1.94.6-.32.1-1.23l-.15-.22-.14-.16q-.04-.06-.03-.1.04-.05.18-.1.14-.07.28.02.6.7 2.22.48 1.78-.2 2.37-1.16.3-.5.45-.4.16.08.14.7-.02.33-.3 1.22-.13.3-.1.5.05.2.33.2.03-.24.2-1.02.14-.77.17-1.2.02-.28-.1-1-.1-.7-.1-1.3.02-.58.32-.93.2-.23.67-.23 0-.5.46-.7.45-.23.97-.15.53.07.8.3zM10.1 5.14q.04-.23-.04-.4-.07-.17-.15-.2-.1-.03-.1.1 0 .06.05.07.14 0 .1.2-.04.28.1.28.04 0 .04-.04zm5.6 2.64q-.02-.1-.08-.15-.06-.05-.18-.07-.1-.02-.2-.08l-.12-.1-.1-.1-.06-.1-.06-.05-.05.02q-.2.2.1.58.27.37.5.42.13.02.2-.1.08-.12.06-.27zm-2.38-2.85q0-.15-.06-.26-.07-.12-.15-.17-.07-.05-.1-.04-.2 0-.1.1l.05.02q.2.05.24.4 0 .05.1 0zm.73-3.12q0-.02-.04-.06-.02-.04-.1-.1l-.14-.07q-.2-.2-.32-.2t-.15.1q-.04.08-.02.17.02.1 0 .17l-.1.15q-.06.08-.07.12 0 .03.05.1.05.05.1 0l.15-.1q.1-.1.2-.13h.12q.1 0 .2-.04.1-.03.13-.1zm7.56 17.97q.28.16.43.32.14.16.16.32 0 .15-.05.3-.04.15-.2.3-.16.14-.32.25-.15.12-.4.25l-.42.22q-.17.1-.42.2l-.36.18q-.5.26-1.15.75-.63.5-1 .86-.24.22-.92.26-.68.04-1.2-.2-.23-.12-.4-.32-.14-.2-.2-.34-.07-.15-.3-.26-.23-.1-.63-.13H11.7l-.76.04q-.6 0-1.07.2-.47.18-.7.4-.25.2-.6.38-.34.16-.7.15-.4 0-1.5-.4t-1.95-.6l-.7-.12-.66-.1-.52-.13q-.3-.08-.45-.2-.17-.1-.24-.26-.13-.3.1-.88.22-.58.23-.73 0-.22-.06-.55L2 19.38q-.06-.24-.05-.48 0-.24.14-.37.17-.16.75-.18.58-.03.8-.16.4-.25.57-.48.16-.23.16-.7.28 1-.43 1.43-.43.27-1.1.2-.47-.04-.6.14-.16.2.08.75.02.08.1.24l.12.23.06.23q.03.15.02.3 0 .2-.23.65-.23.47-.2.66.05.22.5.34.27.08 1.13.25.87.17 1.34.28.32.08 1 .3.66.2 1.1.3.43.1.73.05.58-.08.87-.37.3-.3.3-.64.03-.34-.1-.78-.1-.43-.25-.7-.13-.26-.27-.48-1.62-2.55-2.26-3.24-.92-1-1.52-.54-.15.12-.2-.2-.05-.22-.03-.5 0-.4.13-.7.12-.3.32-.64.2-.32.3-.56l.35-.96.4-1.05q.15-.35.4-.8.26-.46.52-.73 1.48-1.9 1.66-2.6-.16-1.5-.2-4.16-.04-1.2.3-2.02.36-.82 1.43-1.4.52-.28 1.4-.28.7 0 1.4.18.72.2 1.2.56.77.56 1.23 1.62.45 1.07.38 1.98-.06 1.27.4 2.87.46 1.52 1.8 2.92.72.8 1.32 2.2.6 1.38.8 2.55.1.65.06 1.13-.04.47-.16.74t-.26.3q-.14.02-.32.25l-.36.46q-.18.25-.54.45-.37.2-.82.2-.24 0-.42-.07-.18-.05-.3-.18l-.18-.2q-.06-.08-.16-.28l-.12-.26q-.3-.5-.55-.4-.25.1-.37.66-.13.57.1 1.3.26.94 0 2.62-.13.87.24 1.34.38.48.98.44.6-.03 1.14-.47.8-.67 1.2-.9.4-.24 1.38-.57.7-.24 1.03-.5.33-.24.25-.45-.07-.22-.33-.38-.27-.17-.7-.32-.44-.15-.67-.64-.22-.5-.2-.97.02-.48.2-.64.03.42.12.76.1.33.2.53t.27.38q.17.2.28.27.1.07.3.17l.2.13z
+" />
+					</svg>
+                	Linux
+                </a>
+                <a href="#" class="pure-button pure-button-primary downloadbutton">
+                	<svg aria-hidden="true" height="1.688em" viewBox="0 0 24 24" width="1.688em">
+						<path d="M22.05 17.52q-.57 1.8-1.78 3.6-1.86 2.84-3.7 2.84-.7 0-2.02-.46-1.25-.47-2.18-.47-.88 0-2.05.48-1.17.5-1.9.5-2.2 0-4.35-3.74Q1.95 16.5 1.95 13q0-3.28 1.63-5.38 1.62-2.08 4.1-2.08 1.04 0 2.55.43 1.5.43 2 .43.64 0 2.06-.5 1.46-.48 2.48-.48 1.72 0 3.07.94.75.52 1.5 1.44-1.14.97-1.64 1.7-.93 1.36-.93 3 0 1.78 1 3.2 1 1.44 2.28 1.83zM16.62.62q0 .87-.4 1.95-.45 1.08-1.36 2-.78.77-1.55 1.03-.53.15-1.5.24.05-2.15 1.13-3.7Q14 .58 16.53 0l.04.16.04.16.02.14V.6z
+" />
+					</svg>
+                	macOS
+                </a>
+                <a href="#" class="pure-button pure-button-primary downloadbutton">
+                	<svg aria-hidden="true" height="1.688em" viewBox="0 0 24 24" width="1.688em">
+						<path d="M8.96 5.12q.23 0 .4-.17.16-.16.16-.4 0-.22-.17-.4Q9.2 4 8.95 4q-.22 0-.38.16-.16.17-.16.4t.17.4q.16.16.4.16zm6.08 0q.23 0 .4-.17.15-.16.15-.4 0-.22-.17-.4-.16-.15-.4-.15-.22 0-.38.16-.17.17-.17.4t.17.4q.16.16.4.16zM3.34 7.77q.6 0 1.03.44.43.44.43 1.05v6.2q0 .62-.42 1.05-.43.43-1.05.43-.62 0-1.05-.43-.43-.43-.43-1.05v-6.2q0-.6.43-1.04.43-.43 1.05-.43zm15.28.28v9.6q0 .67-.46 1.13-.46.46-1.1.46h-1.1v3.27q0 .63-.43 1.07-.43.43-1.05.43-.62 0-1.05-.43-.43-.44-.43-1.06v-3.26h-2v3.27q0 .63-.43 1.07-.43.43-1.05.43-.6 0-1.04-.43-.43-.44-.43-1.06l-.02-3.26H6.97q-.67 0-1.13-.46-.46-.46-.46-1.13v-9.6h13.24zM15.27 2.2q1.55.8 2.47 2.22.92 1.42.92 3.1H5.32q0-1.68.93-3.1.92-1.42 2.48-2.2L7.7.3q-.1-.2.07-.3.2-.08.3.1l1.03 1.9q1.37-.6 2.9-.6 1.53 0 2.9.6l1.04-1.9q.1-.18.3-.1.16.1.06.3zm6.88 7.04v6.2q0 .63-.43 1.06-.43.43-1.05.43-.6 0-1.04-.43-.43-.43-.43-1.05v-6.2q0-.63.43-1.05.43-.43 1.04-.43.62 0 1.05.43.43.42.43 1.04z
+" />
+					</svg>
+                	Android
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="content-wrapper">
+	<div class="content">
+		<h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
+
+		<div class="pure-g">
+			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+				<h3 class="content-subhead">
+					<i class="fa fa-rocket"></i>
+					Get Started Quickly
+				</h3>
+				<p>
+					Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+				</p>
+			</div>
+			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+				<h3 class="content-subhead">
+					<i class="fa fa-mobile"></i>
+					Responsive Layouts
+				</h3>
+				<p>
+					Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+				</p>
+			</div>
+			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+				<h3 class="content-subhead">
+					<i class="fa fa-th-large"></i>
+					Modular
+				</h3>
+				<p>
+					Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+				</p>
+			</div>
+			<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+				<h3 class="content-subhead">
+					<i class="fa fa-check-square-o"></i>
+					Plays Nice
+				</h3>
+				<p>
+					Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="ribbon l-box-lrg pure-g">
+		<div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+			<img width="300" alt="File Icons" class="pure-img-responsive" src="img/common/file-icons.png">
+		</div>
+		<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+			<h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor.
+			</p>
+		</div>
+	</div>
+
+	<div class="content">
+		<h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+		<div class="pure-g">
+			<div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+				<form class="pure-form pure-form-stacked">
+					<fieldset>
+
+						<label for="name">Your Name</label>
+						<input id="name" type="text" placeholder="Your Name">
+
+
+						<label for="email">Your Email</label>
+						<input id="email" type="email" placeholder="Your Email">
+
+						<label for="password">Your Password</label>
+						<input id="password" type="password" placeholder="Your Password">
+
+						<button type="submit" class="pure-button">Sign Up</button>
+					</fieldset>
+				</form>
+			</div>
+
+			<div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+				<h4>Contact Us</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+
+				<h4>More Information</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+    <footer>
+      &copy; LibreTuner Team
+    </footer>
+  </body>
+  </html>
