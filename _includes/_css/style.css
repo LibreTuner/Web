@@ -378,6 +378,11 @@ a.downloadbutton {
         height: auto;
     }
 
+    a.downloadbutton {
+        width: 100%;
+        margin: 0.500em 0;
+    }
+
     .splash-head {
         font-size: 200%;
         padding: 0;
