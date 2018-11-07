@@ -136,7 +136,7 @@ a.pure-button-primary {
     height: 44px;
     display: block;
     position: absolute;
-    top: 3px;
+    top: 0.5em;
     right: 0;
     display: none;
 }
@@ -149,7 +149,7 @@ a.pure-button-primary {
     height: 2px;
     border-radius: 100px;
     position: absolute;
-    top: 22px;
+    top: 1.45em;
     right: 12px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
