@@ -127,6 +127,10 @@ a.pure-button-primary {
     position: relative;
 }
 
+.home-menu-brand span {
+    vertical-align: middle;
+}
+
 .home-menu-brand svg {
     fill: #192e5e;
 }
