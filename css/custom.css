@@ -2,8 +2,12 @@
     color: #1277FF;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     color: #1277FF;
+}
+
+h4 small {
+	color: #FFFFFF;
 }
 
 #footer {
